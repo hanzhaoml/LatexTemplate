@@ -11,10 +11,77 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage[english]{babel}
 
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green,urlcolor=green]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{boxedminipage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{paralist}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{float}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics theorem and other environments %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  captionpos=b
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 'dedication' environment: To add a dedication paragraph at the start of book %
 % Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
@@ -54,9 +121,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Book's title and subtitle
-\title{\Huge \textbf{Sample Book Title}  \footnote{This is a footnote.} \\ \huge Sample book subtitle \footnote{This is yet another footnote.}}
+\title{\Huge \textbf{This is the name of this book}  }
 % Author
-\author{\textsc{First-name Last-name}\thanks{\url{www.example.com}}}
+\author{\textsc{Han Zhao}\thanks{\url{zhaohan2009011312@gmail.com}}}
 
 
 \begin{document}
@@ -64,150 +131,156 @@
 \frontmatter
 \maketitle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Add a dedication paragraph to dedicate your book to someone %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{dedication}
-Dedicated to Calvin and Hobbes.
-\end{dedication}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Auto-generated table of contents, list of figures and list of tables %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
-\listoffigures
-\listoftables
 
 \mainmatter
 
 %%%%%%%%%%%
 % Preface %
 %%%%%%%%%%%
-\chapter*{Preface}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna.
-
-\section*{Un-numbered sample section}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis.
-
-\section*{Another sample section}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus.
-
-\section*{Structure of book}
-% You might want to add short description about each chapter in this book.
-Each unit will focus on <SOMETHING>.
-
-\section*{About the companion website}
-The website\footnote{\url{https://github.com/amberj/latex-book-template}} for this file contains:
-\begin{itemize}
-  \item A link to (freely downlodable) latest version of this document.
-  \item Link to download LaTeX source for this document.
-  \item Miscellaneous material (e.g. suggested readings etc).
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Give credit where credit is due. %
-% Say thanks!                      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Acknowledgements}
-\begin{itemize}
-\item A special word of thanks goes to Professor Don Knuth\footnote{\url{http://www-cs-faculty.stanford.edu/~uno/}} (for \TeX{}) and Leslie Lamport\footnote{\url{http://www.lamport.org/}} (for \LaTeX{}).
-\item I'll also like to thank Gummi\footnote{\url{http://gummi.midnightcoding.org/}} developers and LaTeXila\footnote{\url{http://projects.gnome.org/latexila/}} development team for their awesome \LaTeX{} editors.
-\item I'm deeply indebted my parents, colleagues and friends for their support and encouragement.
-\end{itemize}
-\mbox{}\\
-%\mbox{}\\
-\noindent Amber Jain \\
-\noindent \url{http://amberj.devio.us/}
-
-%%%%%%%%%%%%%%%%
-% NEW CHAPTER! %
-%%%%%%%%%%%%%%%%
-\chapter{Introductory Chapter}
-
-\begin{chapquote}{Author's name, \textit{Source of this quote}}
-``This is a quote and I don't know who said this.''
+\chapter{Introduction to Statistical Learning Theory}
+\begin{chapquote}{Hebert A. Simon}
+If a system can make progress from executing some processes, it's learning.
 \end{chapquote}
+Three main elements in statistical learning method: \textbf{Model, Strategy} and \textbf{Algorithm}.\\
+\textbf{Model} defines the hypothesis space to be searched. \textbf{Strategy} defines the objective we used to select a model/hypothesis from the hypothesis space, such as ERM, SRM. \textbf{Algorithm} describes the concrete method we used to find our objective in the predefined hypothesis space.
 
-\section{Section heading}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \\ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ Lorem ipsum list:
+\section{Statistical learning}
+Statistical learning is a subject which utilizes the probabilistic and statistical model established based on existing data to predict and analyze the unseen data.
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-2. Duis ac mi magna, a consectetur elit.
-
-3. Curabitur posuere erat \emph{dignissim ligula euismod} ut euismod nisi.
-
-4. Fusce vulputate facilisis neque, et ornare mauris mattis vel.
-
-5. Mauris sit amet nulla mi, vitae rutrum ante.
-
-6. Maecenas quis nulla risus, vel tincidunt ligula.
-
-7. Nullam ac enim neque, non \emph{dapibus} mauris.
-
-8. Integer volutpat leo a orci suscipit eget rhoncus urna eleifend.
-
-\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna\footnote{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus.}:
-
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus. Sed vel ligula justo, sit amet vestibulum dolor. Sed vitae augue sit amet magna ullamcorper suscipit. Quisque dictum ipsum a sapien egestas facilisis.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna.
-
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing.}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam.
-
-\subsection{Lorem ipsum dolor sit amet}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet\footnote{\url{www.example.com}} erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus. Sed vel ligula justo, sit amet vestibulum dolor. Sed vitae augue sit amet magna ullamcorper suscipit. Quisque dictum ipsum a sapien egestas facilisis.
-
-In hac habitasse platea dictumst. Nullam turpis erat, porttitor ut pretium ac, condimentum sed dui. Praesent arcu elit, tristique sit amet viverra at, auctor quis tortor. Etiam eleifend posuere aliquam. Donec sed mattis sapien. Aenean urna arcu, suscipit at rutrum ac, adipiscing ac felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum felis a ipsum ullamcorper semper. Vivamus eu odio sem, dictum luctus nunc. Etiam tincidunt venenatis dolor non pellentesque.
-
-\subsection{Lorem ipsum dolor sit amet, auctor et pulvinar non}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus. Sed vel ligula justo, sit amet vestibulum dolor. Sed vitae augue sit amet magna ullamcorper suscipit. Quisque dictum ipsum a sapien egestas facilisis.
-
-In hac habitasse platea dictumst. Nullam turpis erat, porttitor ut pretium ac, condimentum sed dui. Praesent arcu elit, tristique sit amet viverra at, auctor quis tortor. Etiam eleifend posuere aliquam. Donec sed mattis sapien. Aenean urna arcu, suscipit at rutrum ac, adipiscing ac felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum felis a ipsum ullamcorper semper. Vivamus eu odio sem, dictum luctus nunc. Etiam tincidunt venenatis dolor non pellentesque. 
-
-
-\section{Another section heading}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sample table                                        %
-% Source: www1.maths.leeds.ac.uk/latex/TableHelp1.pdf %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
-\caption{Sample table} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c}
-% centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-S. No. & Column\#1 & Column\#2 & Column\#3 \\ [0.5ex]
-% inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 50 & 837 & 970 \\
-2 & 47 & 877 & 230 \\
-3 & 31 & 25 & 415 \\
-4 & 35 & 144 & 2356 \\
-5 & 45 & 300 & 556 \\ [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ Lorem ipsum list:
+\section{Model}
+In supervised learning, model can be expressed in two ways:
 \begin{itemize}
-\item Mauris sit amet nulla mi, vitae rutrum ante.
-\item Maecenas quis nulla risus, vel tincidunt ligula.
-\item Nullam ac enim neque, non \emph{dapibus} mauris.
+\item{}Decision function: from a deterministic view, which is a non-probabilistic model.
+\item{}Conditional distribution: from a probabilistic view, which is a probabilistic model.
 \end{itemize}
 
-\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna\footnote{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus.}:
+\section{Strategy}
+Given a hypothesis space, we need a criteria to tell us how to choose the optimal hypothesis from the hypothesis space.
+\subsection{ERM(Empirical Risk Minimization)}
+In the context of ERM learning, we need to introduce the notion of loss function/cost function and then our objective is to minimize them. Frequently used loss function:
+\begin{itemize}
+\item{}0-1 loss function
+\item{}Quadratic loss function
+\item{}Absolute loss function
+\item{}Log likelihood loss function
+\end{itemize}
+\subsection{SRM(Structural Risk Minimization)}
+On the basis of ERM learning, SRM learning introduces a regularization term in the cost function used in ERM learning. 
 
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus. Sed vel ligula justo, sit amet vestibulum dolor. Sed vitae augue sit amet magna ullamcorper suscipit. Quisque dictum ipsum a sapien egestas facilisis. 
+\section{Algorithm}
+Normally, the algorithm used in statistical learning is a optimization algorithm because our frequently objective is to select the optimal hypothesis which minimizes the cost function.
 
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam.
+\section{Model selection}
+Techniques used to solve the model selection problem:
+\begin{itemize}
+\item{}Regularization. Regularization is the implementation of SRM strategy. By adding a regularization term to the cost function, we can to some extent penalize those complicated models. As Occam's razor suggests, given two models with the same capability, we should always choose the easier one. So normally, the regularization term is always a increasing function with respect to the model complexity, the more complex the model, the larger the regularization term.
+\item{}Cross validation. S-fold cross validation/Leave-one-out cross validation.
+\end{itemize}
+
+\section{Generative model and discriminative model}
+Generative approach tries to learn the joint distribution $P(X,Y)$ and then compute the conditional distribution $P(Y|X) = \frac{P(X,Y)}{P(X)}$ to predict. Typical generative model includes Naive Bayes and Hidden Markov Model.\\
+On the contrast, discriminative model directly learns the conditional distribution $P(Y|X)$ from data and make predictions based on the learned conditional distribution. Typical discriminative model includes k-NN, Perceptrons, Decision trees, Logistic regression, Maximal entropy model, Support vector machine and Conditional random field.
+
+
+\chapter{Perceptrons}
+Perceptron, first invented by Rosenblatt 1957, is a binary class linear predictor. 
+
+\section{Definition}
+\begin{definition}[Perceptron]
+Assume the input space(feature space) is $\mathcal{X}\subseteq\mathbb{R}^{n}$ and the output space is $\mathcal{Y} = \{+1,-1\}$. Then the decision function which defined as 
+$$f(x) = \text{sign}(wx+b)$$
+is called the perceptron, where $w$ and $b$ are parameters of the perceptron model, $w\in\mathbb{R}^{n}$ is the weight and $b\in\mathbb{R}$ is the bias.
+\end{definition}
+Perceptron is a linear model, also a discriminative model.
+
+\section{Strategy}
+We use ERM strategy in learning perceptrons. A natural choice of the loss function is 0-1 loss function, which defines the number of mis-classified points. In fact, 0-1 loss function is exactly what we need, it's the best loss function in the context of peceptron. However, there are two drawbacks if we choose the 0-1 loss function as our loss function:
+\begin{itemize}
+\item{}0-1 function is not a convex function. So if we want to minimize the 0-1 loss function, we encounter a non-convex optimization problem, in which there is no explicit algorithm that can find the global minimum.
+\item{}The 0-1 loss function is not a continuously differentiable function with respect to the parameters $w$ and $b$. 
+\end{itemize} 
+So we define the cost function of perceptron as:
+$$-\sum_{x_i\in M}y_i(wx_i+b)$$
+where $M$ is the mis-classified set. Such cost function has a intuitive interpretation that it's a measure of distance of each mis-classified point to the decision hyperplane. And more importantly, such cost function is continuously differentiable with respect to the parameters $w$ and $b$. By optimizing this function, we can obtain an online-learning algorithm for training perceptrons.
+\begin{algorithm}[H]
+\centering
+\caption{Online learning algorithm for Perceptrons}
+\begin{algorithmic}[1]
+\REQUIRE Training-set $T=\{(x_1, y_1),\ldots,(x_N,y_N)\}$ where $x_i\in\mathcal{X} = \mathbb{R}^{n}$ and $y_i\in\mathcal{Y} = \mathbb{R}$; Learning rate $\eta$ where $0<\eta\leq 1$.
+\ENSURE Parameters $w$ and $b$ which can correctly classify all the input points(If they are linearly separable).
+\STATE Randomly select the initial value for $w_0$ and $b_0$.
+\REPEAT
+\FOR{\textbf{each} $(x_i,y_i)$}
+	\IF {$y_i(w_i+b_i)\leq 0$}
+		\STATE $w_{i+1}\leftarrow w_i+\eta y_ix_i$
+		\STATE $b_{i+1}\leftarrow b_i+\eta y_i$
+	\ENDIF
+\ENDFOR
+\UNTIL {All training points are correctly classified by current parameters.} 
+\end{algorithmic}
+\end{algorithm}
+Novikoff has proved the convergence property of this online learning algorithm for perceptrons.
+
+
+
+\chapter{k Nearest Neighbor}
+The intuition of kNN is to partition the input space based on a distance metric and training set.\\
+In reality, in order to improve the efficiency of kNN, we use KD-Tree to improve the search efficiency.
+
+
+\chapter{Naive Bayes}
+The very assumption Naive Bayes uses: Conditional independent assumption for features.
+\section{Learning and classification for Naive Bayes}
+Given the training set, Naive Bayes first learns the input/output joint distribution $P(X,Y)$ based on the feature conditional independence assumption. Then for a prediction task, NB outputs the result with the maximal posterior probability. So NB is a generative model.\\
+The way NB to learn $P(X,Y)$ is to learn $P(Y)$ and $P(X|Y=y)$, then $P(X,Y) = P(Y)P(X|Y)$.
+\subsection{Interpretation of MAP}
+If we choose the loss function as 0-1 loss function, then the classification method used in NB, which is the Maximal Posterior Probability, can be interpreted as ERM strategy under 0-1 loss function:
+$$L(Y,f(X))=\left\{
+\begin{array}{l l}
+1, & Y\neq f(X)\\
+0, & Y = f(X)
+\end{array}
+\right.$$
+Then the expected error function is:
+\begin{eqnarray*}
+R(f) & = & \mathbb{E}[L(Y,f(X))]\\
+& = & \sum_{x,y}L(y, f(x))P(x,y)\\
+& = & \sum_{x,y}L(y, f(x))P(y|x)P(x)\\
+& = & \sum_{x}\{\sum_{y}L(y, f(x))P(y|x)\}P(x)\\
+& = & \mathbb{E}_{x}[\sum_{y}L(y, f(x))P(y|x)]
+\end{eqnarray*}
+Hence, in order to minimize $R(f)$, it's sufficient to minimize $\sum_{y}L(y, f(x))P(y|x)$ for each $x$. We obtain:
+\begin{eqnarray*}
+f(x) & = & \argmin_{y\in\mathcal{Y}}\sum_{k=1}^{K}L(c_k,y)P(c_k|X = x)\\
+& = & \argmin_{y\in\mathcal{Y}}\sum_{k=1}^{K}P(y\neq c_k|X=x)\\
+& = & \argmin_{y\in\mathcal{Y}}[1-P(y=c_k|X=x)]\\
+& = & \argmax_{y\in\mathcal{Y}}P(y=c_k|X=x)
+\end{eqnarray*} 
+So, in the context of NB, the ERM strategy is equivalent to the MAP strategy.
+\section{Parameter estimation for Naive Bayes}
+Frequency counting is equivalent to MLE strategy under the assumption that the distribution is binomial distribution or multinomial distribution. This conclusion can be proved using \textbf{Lagrange Multiplier Method}.
+
+\chapter{Decision Tree}
+ID3 is the basic decision tree algorithm. C4.5 introduces the notion of split-info to restrain the tree to grow too widely. Moreover, C4.5 can support continuous attribute and lack of attribute value during classification.\\
+CART(Classification And Regression Tree) is a widely adopted algorithm. CART supports both classification tasks and regression tasks. The division measure used in CART for classification is Gini. For a multinomial distribution $p$, the Gini is defined as:
+$$\text{Gini}(p) = \sum_{k=1}^{K}p_k(1-p_k) = 1-\sum_{k=1}^{K}p_k^2$$
+
+
+ 
+\chapter{Logistic Regression and Maximal Entropy Model}
+\section{Logistic regression}
+\begin{definition}[Logistic distribution]
+Let $X$ be a continuous random variable, we say that $X$ obeys the logistic distribution as long as the cumulative distribution function(cdf) and probability density function(pdf) have the following form:
+$$F(x) = P(x\leq x) = \frac{1}{1+e^{-(x-\mu)/\gamma}}$$
+$$f(x) = F'(x) = \frac{e^{-(x-\mu)/\gamma}}{\gamma(1+e^{-(x-\mu)/\gamma})^2}$$
+\end{definition}
+
+
+
 
 \end{document}
