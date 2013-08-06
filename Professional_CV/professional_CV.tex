@@ -28,6 +28,10 @@
 \usepackage[T1]{fontenc} % T1 font encoding for high quality font output
 \usepackage{color} % enable to print text with different colors
 \usepackage{hyperref}	% enable to use links in pdf
+\usepackage{fancyhdr}   % enable to use header and page number
+\pagestyle{plain}		% set page style
+\pagenumbering{arabic}	% set page number formatting
+
 \hypersetup{
     colorlinks=true,       % false: boxed links; true: colored links
     linkcolor=red,          % color of internal links (change box color with linkbordercolor)
@@ -47,8 +51,8 @@
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Contact Information}
-Zijing Building\#2 210A, Tsinghua University\hfill\textbf{Mobile:} (+86)152-1058-8605\\
-Beijing, 100084, China\hfill\textbf{Email:} \href{mailto:zhao-h09@mail.tsinghua.edu.cn}{zhao-h09@mails.tsinghua.edu.cn}\\
+Meiyuan New Estate\#84 601, Pudong New District\hfill\textbf{Mobile:} (+86)152-1058-8605\\
+Shanghai, 200120, China\hfill\textbf{Email:} \href{mailto:h73zhao@uwaterloo.ca}{h73zhao@uwaterloo.ca}\\
 \end{rSection}
 
 \begin{rSection}{Education}
@@ -56,13 +60,13 @@ Beijing, 100084, China\hfill\textbf{Email:} \href{mailto:zhao-h09@mail.tsinghua.
 %	M.S. GRADUATE, UNIVERSITY OF WATERLOO
 %----------------------------------------------------------------------------------------
 \begin{rSubsection}{\href{https://uwaterloo.ca/}{University of Waterloo}}{Sep 2013 - Present}{M.S., David R. Cheriton School of Computer Science}{Waterloo, Ontario, CA}
-\item{GPA: /4.0, Major GPA: /4.0}
+\item{GPA: /100}
 \end{rSubsection}
 %----------------------------------------------------------------------------------------
 %	UNDERGRADUATE, TSINGHUA UNIVERSITY
 %----------------------------------------------------------------------------------------
 \begin{rSubsection}{\href{http://www.tsinghua.edu.cn/publish/th/index.html}{Tsinghua University}}{Aug 2009 - July 2013}{B.S., Department of Computer Science and Technology}{Beijing, China}
-\item{GPA: 90.6/100, Rank: 12/140}
+\item{GPA: 90.9/100, Rank: 12/140}
 \end{rSubsection}
 
 \end{rSection}
@@ -84,7 +88,7 @@ Beijing, 100084, China\hfill\textbf{Email:} \href{mailto:zhao-h09@mail.tsinghua.
 %----------------------------------------------------------------------------------------
 %	NLP GROUP, TSINGHUA UNIVERSITY
 %----------------------------------------------------------------------------------------
-\begin{rSubsection}{\href{http://nlp.csai.tsinghua.edu.cn}{NLP and SC Lab, Tsinghua University}}{May 2011 - June 2012}{Research Intern}{\textbf{Advisor: }\href{http://nlp.csai.tsinghua.edu.cn/~lzy/}{\textit{Post doc. Zhiyuan Liu}}}
+\begin{rSubsection}{\href{http://nlp.csai.tsinghua.edu.cn}{NLP and SC Lab, Tsinghua University}}{May 2011 - June 2012}{Research Assistant}{\textbf{Advisor: }\href{http://nlp.csai.tsinghua.edu.cn/~lzy/}{\textit{Post doc. Zhiyuan Liu}}}
 \item Independently built a Chinese word segmentation and part-of-speech tagging
 library on Java.
 \item Proposed an algorithm which utilizes keywords extracted from users on social
@@ -95,14 +99,11 @@ networks and find the mutual interests between pair of users.
 %----------------------------------------------------------------------------------------
 %	COMPLEX NETWORK LAB, UNIVERSITY OF NOTRE DAME
 %----------------------------------------------------------------------------------------
-\begin{rSubsection}{\href{http://www3.nd.edu/~cone/}{Complex Network Lab, University of Notre Dame}}{June 2012 - August 2012}{Research Intern}{\textbf{Advisor: }\href{http://www.cse.nd.edu/~tmilenko/}{\textit{Prof. Tijana Milenkovic}}}
+\begin{rSubsection}{\href{http://www3.nd.edu/~cone/}{Complex Network Lab, University of Notre Dame}}{June 2012 - August 2012}{Visiting Scholar}{\textbf{Advisor: }\href{http://www.cse.nd.edu/~tmilenko/}{\textit{Prof. Tijana Milenkovic}}}
 \item Combine state-of-the-art similarity functions and alignment methods to improve
 the performance of global network aligner in biological systems.
 \item Best Poster Award($3^{rd}$ Place), the 2012 REU Program Sponsored by the National
 Science Foundation, University of Notre Dame, 2012.
-\item Paper ”Evaluating existing global network aligners: implications for aging”
-submitted for ACM Conference on Bioinformatics, Computational Biology and
-Biomedical Informatics (BCB) 2013.
 \end{rSubsection}
 
 %----------------------------------------------------------------------------------------
@@ -148,12 +149,20 @@ Observable Operator Models and built an algorithm for learning hidden markov mod
 \end{rSubsection}
 \end{rSection}
 
+%----------------------------------------------------------------------------------------
+%	REFEREED CONFERENCE PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Refereed Conference Publications}
+\item{}T.Milenkovi\'{c}, \textbf{H. Zhao} and F.Faisal, "Global network alignment in the context of aging". In \emph{Proceedings of the 4th ACM International Conference on Bioinformatics, Computational Biology and Biomedicine} (ACM-BCB 2013), Washington DC, USA, September 22-25, 2013.
+\end{rSection}
+
 
 %----------------------------------------------------------------------------------------
 %	REFEREED POSTERS
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Refereed Posters}
-\item{}\textbf{H. Zhao}, F.Faisal, and T.Milenkovi\'{c}, "Evaluating existing global network aligners", the 2013 REU Program Sponsored by the National Science Foundation, University of Notre Dame, August 2012.
+\item{}T.Milenkovi\'{c}, \textbf{H. Zhao} and F.Faisal, "Global network alignment in the context of aging", the \emph{ACM Conference on Bioinformatics, Computational Biology and Biomedicine}, 2013(ACM BCB '13), Washington DC, USA, September 22-25, 2013.
+\item{}\textbf{H. Zhao}, F.Faisal and T.Milenkovi\'{c}, "Evaluating existing global network aligners", the 2013 REU Program Sponsored by the National Science Foundation, University of Notre Dame, August 2012.
 \end{rSection}
 
 
@@ -162,7 +171,10 @@ Observable Operator Models and built an algorithm for learning hidden markov mod
 %	CONTRIBUTED TALKS
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Contributed talks}
-\item{}F.Faisal, \textbf{H.Zhao} and T.Milenkovi\'{c}, "What can biological networks tell us about aging?", NetBio SIG at ISMB/ECCB 2013, Berlin, Germany, July 2013.
+\item{}F.Faisal, \textbf{H.Zhao} and T.Milenkovi\'{c}, "What can biological networks tell us about
+aging?," \emph{Network Biology (NetBio) SIG} at the $21^{th}$ \emph{Annual International Conference
+on Intelligent Systems for Molecular Biology} and $12^{th}$ \emph{Annual European Conference on
+Computational Biology} (ISMB/ECCB), Berlin, Germany, July 19-23, 2013.
 \end{rSection}
 
 
@@ -188,6 +200,7 @@ Observable Operator Models and built an algorithm for learning hidden markov mod
 \item{Second Prize in Contributions for Laboratory Construction, Tsinghua University\hfill{2011}}
 \item{Most Favored Application in the Design of Social Oriented System in Microblogs\hfill{2011}}
 \item{Third Place in the poster competition of the 2012 REU Program, University of Notre Dame.\\ Sponsored by the National Science Foundation\hfill{2012}}
+\item{Outstanding Graduate in Tsinghua University\hfill{2013}}
 \end{rSubsection}
 \end{rSection}
 
