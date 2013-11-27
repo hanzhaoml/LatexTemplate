@@ -26,6 +26,7 @@
 \usepackage{color}
 \usepackage{enumerate}
 \usepackage{array}
+\usepackage{times}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[]
@@ -44,7 +45,9 @@
 \semester{Winter 2013}
 \date{\today}
 
-
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 \newcommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\norm}[1]{\lVert#1\rVert}
 \renewcommand{\lstlistingname}{Code}
