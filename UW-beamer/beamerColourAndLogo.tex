@@ -1,0 +1,37 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage{graphicx}
+
+% shows how to change default (blue) colours in the default beamer theme
+% found here: http://joerglenhard.wordpress.com/tag/latex/
+\definecolor{WaterlooRed}{RGB}{145,11,46}
+\setbeamercolor{title}{fg=WaterlooRed}
+\setbeamercolor{frametitle}{fg=WaterlooRed}
+\setbeamercolor{structure}{fg=WaterlooRed}
+
+% adds logo in the footer
+\logo{\includegraphics[scale=.25]{csuow}}
+
+\title[]{Title Text}
+\author[Marek Grze\'{s}]{Marek Grze\'{s}}
+\institute{\includegraphics[scale=0.25]{uow}}
+\date{{\tiny\today}}
+
+\begin{document}
+
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{This is the first slide}
+    Content goes here
+    \begin{itemize}
+      \item Item 1
+    \end{itemize}
+
+  \end{frame}
+
+\end{document}
