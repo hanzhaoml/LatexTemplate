@@ -1,0 +1,132 @@
+\documentclass[final]{beamer}
+\usepackage[orientation=portrait,size=a0,scale=1.24,debug]{beamerposter}
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=CMURed,bg=CMURed!20} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\setlength{\paperwidth}{33.1in} % A0 width: 46.8in
+\setlength{\paperheight}{46.8in} % A0 height: 33.1in
+\setlength{\sepwid}{0.020\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.46\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.92\paperwidth} % Width of two columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+%-----------------------------------------------------------
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{etex}
+\usepackage{exscale}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{times}
+\usepackage{subfigure}
+
+%\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Add the Logo Of UWaterloo to the title
+\setbeamertemplate{headline}{
+\flushleft
+ \leavevmode
+  \begin{columns}
+    \begin{column}{0.02\linewidth}\end{column}
+   % \begin{column}{.1\linewidth}
+   %  \includegraphics[width=\linewidth]{UWaterloo.pdf}
+   % \end{column}
+   \begin{column}{0.84\linewidth}
+    \vskip1cm
+    % \centering
+    \usebeamercolor{title in headline}{\color{CMURed}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[0.2ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\Large{\insertinstitute}\\[0.5ex]}
+    % \vskip1cm
+   \end{column}
+   \begin{column}{0.12\linewidth}
+    \includegraphics[width=\linewidth]{CMUlogo.pdf}
+   \end{column}
+   \begin{column}{0.02\linewidth}\end{column}
+  \end{columns}
+ \vspace{0.5in}
+ \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Self-Adaptive Hierarchical Sentence Model}
+\author{Han Zhao$^\dagger$, Zhengdong Lu$^\ddagger$ and Pascal Poupart$^\dagger$ \\
+$^\dagger$\{han.zhao, ppoupart\}@uwaterloo.ca, $^\ddagger$lu.zhengdong@huawei.com} 
+\institute{$^\dagger$University of Waterloo, $^\ddagger$Noah's Ark Lab, Huawei Technologies} 
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+\vspace*{-0.4in}
+\begin{columns}[t] % The whole poster consists of two major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+\begin{block}{Introduction}\end{block}
+
+\begin{block}{Background}\end{block}
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} 
+\begin{block}{Our Results}\end{block}
+\end{column} 
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}

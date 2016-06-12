@@ -1,0 +1,95 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+\usepackage{textpos}
+
+\usecolortheme{beaver}
+\usefonttheme{default}
+
+\hypersetup {
+  bookmarks=false,
+  pdfpagelabels=false,
+  hyperfootnotes=false,
+  hyperindex=false,
+  pageanchor=false,
+  colorlinks
+}
+
+\makeatletter
+\let\saved@hyper@linkurl\hyper@linkurl
+%\let\saved@hyper@linkfile\hyper@linkfile
+\let\saved@hyper@link@\hyper@link@
+\AtBeginDocument{%
+  % Since the whole document is affected, only the \begin part of
+  % environment `NoHyper' is needed.
+  \NoHyper
+  \let\hyper@linkurl\saved@hyper@linkurl % needed by \url
+  %\let\hyper@linkfile\saved@hyper@linkfile % needed by \href{<file>}
+  \let\hyper@link@\saved@hyper@link@ % needed by \href{<url>}
+}
+\makeatother
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\diag}{\text{diag}}
+\newcommand\indep{\perp\!\!\!\perp}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% shows how to change default (blue) colours in the default beamer theme
+% found here: http://joerglenhard.wordpress.com/tag/latex/
+\definecolor{CMURed}{RGB}{145,11,46}
+\setbeamercolor{section in toc}{fg=CMURed}
+\setbeamercolor{title}{fg=CMURed}
+\setbeamercolor{frametitle}{fg=CMURed}
+\setbeamercolor{structure}{fg=CMURed}
+\setbeamertemplate{footline}[page number]
+
+% adds logo in the footer
+\logo{\includegraphics[scale=.15]{cmu_logo_red}}
+
+\title[]{Online Learning: A Survey on Regret Bound Analysis}
+\author[Han Zhao]{Han Zhao \\ Machine Learning Department \\ han.zhao@cs.cmu.edu}
+\institute{\includegraphics[scale=0.25]{cmu_logo_red}}
+\date{{Apr. 28th, 2016}}
+
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\Reg}{\text{Regret}}
+
+\begin{frame}
+\frametitle{Online Learning: A Survey on Regret Bound Analysis}
+Online learning as a (adversarial) game:
+\vspace*{-2pt}
+\begin{algorithmic}[1]
+\FOR {$t = 1, 2,\ldots$}
+	\STATE	Receive an observation $\mathbf{x}_t\in\mathcal{X}$.
+	\STATE 	Make a prediction $p_t\in\mathcal{Y}$.
+	\STATE	Receive the true answer $y_t\in\mathcal{D}$.
+	\STATE	Incur a loss $l(p_t, y_t)$.
+\ENDFOR
+\end{algorithmic}
+Goal: Regret minimization
+$$\Reg_T(\mathcal{A}, \mathcal{H})\defeq  \sum_{t=1}^T l(\mathcal{A}(\mathbf{x}_t), y_t) - \min_{h^*\in \mathcal{H}}\sum_{t=1}^T l(h^*(\mathbf{x}_t), y_t)$$
+
+An algorithm is called no-regret w.r.t. $\mathcal{H}$ if $\Reg_T(\mathcal{A}, \mathcal{H}) = o(T)$.
+\end{frame}
+
+\end{document}
+
