@@ -6,42 +6,30 @@
 % It also sets the bibliographystyle to plainnat; see the natbib 
 % documentation for more informations. 
 \usepackage{arxiv} 
-\usepackage{multirow}
-\usepackage{amsmath, amssymb,amsfonts} 
-\usepackage{lipsum}
-\usepackage{tikz}
 \usepackage{hyperref}
+\usepackage{changes}
 \usepackage{url}
-\usepackage{amsfonts}
-\usepackage{fancyhdr}
-\usepackage{comment}
-\usepackage{times}
-\usepackage{float}
-\usepackage{subfigure}
-\usepackage{tcolorbox}
-\usepackage{amsmath}
-\usepackage{changepage}
 \usepackage{amssymb}
-\usepackage{graphicx}%
-\usepackage{gensymb}
-\usepackage{mhchem}
-\setcounter{MaxMatrixCols}{30}
+\usepackage{enumitem}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{hyperref}
 \usepackage{amsmath}
-\usepackage{natbib}
-\setlength{\bibsep}{0pt plus 0.3ex}
-% use Times
-\usepackage{times}
-% For figures
-\usepackage{graphicx} % more modern
-%\usepackage{epsfig} % less modern
-\usepackage{subfigure} 
-
-% For citations
-\usepackage{natbib}
-
-% For algorithms
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{fancyvrb}
+\usepackage{comment}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{natbib}
+
 % Definitions of handy macros can go here
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \theoremstyle{definition}
@@ -52,20 +40,25 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
+\newtheorem{claim}{Claim}[section]
 
 \floatname{algorithm}{Procedure}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \newcommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\vect}[1]{\text{vec(#1)}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
+\newcommand{\SPD}{\mathbb{S}}
 \newcommand{\Nat}{\mathbb{N}}
 \newcommand{\br}[1]{\{#1\}}
 \newcommand\todo[1]{\textcolor{red}{[\textbf{TODO}: #1]}}
 \renewcommand{\lstlistingname}{Code}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\diag}{\text{diag}}
+\newcommand{\tr}{\text{tr}}
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\eqdef}{=\vcentcolon}
@@ -105,6 +98,7 @@
 % Leave editors like that       
 % \editor{Alessandro Antonucci, Giorgio Corani, and Cassio Polpo de Campos}
 \maketitle
+
 \begin{abstract}%
 Abstract goes here.
 \end{abstract}
