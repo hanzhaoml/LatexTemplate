@@ -1,0 +1,123 @@
+\documentclass[twoside,11pt]{article}
+% Any additional packages needed should be included after arxiv.
+% Note that pgm2016.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; see the natbib 
+% documentation for more informations. 
+\usepackage{arxiv} 
+\usepackage{multirow}
+\usepackage{amsmath, amssymb,amsfonts} 
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{times}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\usepackage{gensymb}
+\usepackage{mhchem}
+\setcounter{MaxMatrixCols}{30}
+\usepackage{amsmath}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+% use Times
+\usepackage{times}
+% For figures
+\usepackage{graphicx} % more modern
+%\usepackage{epsfig} % less modern
+\usepackage{subfigure} 
+
+% For citations
+\usepackage{natbib}
+
+% For algorithms
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% Definitions of handy macros can go here
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+\newtheorem{conjecture}{Conjecture}[]
+\newtheorem{example}{Example}[]
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\newcommand\todo[1]{\textcolor{red}{[\textbf{TODO}: #1]}}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  language=matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  captionpos=b
+}
+
+% This line will be changed in the camera-ready version
+%\pgmheading{1}{2000}{1-48}{4/00}{10/00}{Authors}
+% Insert here short versions for both title and author name (showed in page headers)
+% \ShortHeadings{short title}{short authors}
+\ShortHeadings{Title of the paper}{Author of the paper}
+\firstpageno{1}
+\begin{document}
+\title{Paper Title}
+\author{\name Han Zhao \email han.zhao@cs.cmu.edu \\
+       \addr Machine Learning Department, School of Computer Science, Carnegie Mellon University, Pittsburgh, PA, USA}
+% Leave editors like that       
+% \editor{Alessandro Antonucci, Giorgio Corani, and Cassio Polpo de Campos}
+\maketitle
+\begin{abstract}%
+Abstract goes here.
+\end{abstract}
+
+% \begin{keywords}
+% Keywords goes here.
+% \end{keywords}
+
+\section{Introduction}
+  
+
+%\appendix
+\acks{Acknowledgment goes here.}
+
+\bibliography{reference}
+\end{document}
