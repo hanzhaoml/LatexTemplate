@@ -1,0 +1,286 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.0 (29/03/13)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final,20pt]{beamer}
+
+\usepackage[scale=1.25]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=CMURed,bg=CMURed!20} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{47.8in} % A0 width: 46.8in
+\setlength{\paperheight}{33.1in} % A0 height: 33.1in
+\setlength{\sepwid}{0.020\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.30\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.6\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.9\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{etex}
+\usepackage{exscale}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{fancyvrb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{times}
+\usepackage{subfigure}
+
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize} %to set the body size
+\setbeamertemplate{itemize subitem}{\normalsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}  %to set the symbol size
+%\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\renewcommand{\lstlistingname}{Code}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Add the Logo Of CMU to the title
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{.1\linewidth}
+    \includegraphics[width=1.1\linewidth]{CMUlogo.pdf}
+   \end{column}
+   \begin{column}{.6\linewidth}
+    \centering
+    \usebeamercolor{title in headline}{\color{CMURed}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[0.2ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\Large{\insertinstitute}\\[0.5ex]}
+    \vskip1cm
+   \end{column}
+   \begin{column}{.15\linewidth}
+    \includegraphics[width=1.0\linewidth]{mllogo.jpg}
+   \end{column}
+  \end{columns}
+ \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=0.6in,dp=1.0in,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\color{CMURed}\Large{\hspace*{0.8in}NIPS-2017}\hspace*{2em}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=0.6in,dp=1.0in,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\color{CMURed}\Large{December 6, 2017}\hspace*{2em}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=0.6in,dp=1.0in,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\color{CMURed}\Large{han.zhao@cs.cmu.edu}\hspace*{2em}
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Linear Time Computation of Moments in Sum-Product Networks}
+\author{Han Zhao and Geoff Gordon}
+\institute{Machine Learning Department, Carnegie Mellon University} 
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{1ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{1ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{1ex} % White space under figures
+\setlength\belowdisplayshortskip{1ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+\vspace*{-0.5in}
+\begin{block}{Background}
+\textcolor{CMURed}{\textbf{Sum-Product Networks (SPNs)}:}
+\begin{itemize}
+    \item   Rooted directed acyclic graph of univariate distributions, sum nodes and product nodes.
+    \item   We focus on discrete SPNs, but the proposed algorithms work for continuous ones as well.
+\end{itemize}
+\includegraphics[width=\linewidth]{spntrees.pdf}
+
+Recursive computation of the network: 
+\begin{equation*}
+V_k(\mathbf{x};\mathbf{w}) = 
+\begin{cases}
+p(X_i = \mathbf{x}_i) & \text{if $k$ is a leaf node over $X_i$} \\
+\prod_{j \in \text{Ch}(k)} V_j(\mathbf{x};\mathbf{w}) & \text{if $k$ is a product node} \\
+\sum_{j\in \text{Ch}(k)} w_{k,j} V_j(\mathbf{x};\mathbf{w}) & \text{if $k$ is a sum node}
+\end{cases} 
+\end{equation*}
+\textcolor{CMURed}{\textbf{Scope:}} The set of variables that have univariate distributions among the node's descendants. \\
+\textcolor{CMURed}{\textbf{Complete:}} An SPN is \emph{complete} iff each sum node has children with the same scope.\\
+\textcolor{CMURed}{\textbf{Decomposable:}} An SPN is \emph{decomposable} iff for every product node $v$, scope($v_i$) $\bigcap$ scope($v_j$) $=\varnothing$ where $v_i, v_j\in \text{Ch}(v), i\neq j$. 
+\end{block}
+
+\begin{block}{Summary}
+\begin{itemize}
+    \item   So far the best algorithm for moment computation scales quadratically in the size of Sum-product Networks (SPNs).
+    \item   We propose an optimal linear-time algorithm that works even when the SPN is a general directed acyclic graph (DAG).
+      \begin{itemize}
+        \item   A linear time reduction from the moment computation problem to a joint inference problem.
+        \item   An efficient procedure for polynomial evaluation by differentiation without expanding the network.
+        \item   A dynamic programming method to reduce the computation of the moments of all the edges from quadratic to linear.
+      \end{itemize}
+    \item   Applications: 
+      \begin{itemize}
+        \item   Online moment matching
+        \item   Assumed density filtering
+      \end{itemize}
+\end{itemize}
+\end{block}
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} 
+\vspace*{-0.5in}
+\begin{block}{Linear Time Exact Moment Computation}
+\textcolor{CMURed}{\textbf{Exact Posterior Has Exponentially Many Modes:}}\\
+Every complete and decomposable SPN $\mathcal{S}$ can be factorized into a sum of $\Omega(2^{H(\mathcal{S})})$ induced trees (sub-graphs), where each tree corresponds to a product of univariate distributions. $H(\mathcal{S}) = $ height of $\mathcal{S}$:
+\begin{equation*}
+p(\mathbf{w}\mid\mathbf{x}) = \frac{1}{Z_{\mathbf{x}}}\sum_{t=1}^{\tau}\prod_{k=1}^m\text{Dir}(w_k;\alpha_k)\prod_{(k, j)\in\mathcal{T}_{tE}}w_{k,j}\prod_{i=1}^n p_t(x_i)
+\end{equation*}
+
+$f$-moment on each edge in the network:
+\begin{align*}
+M_p(f(w_{k,j})) &= \int_{\mathbf{w}}f(w_{k,j})p(\mathbf{w}\mid\mathbf{x})~d\mathbf{w} \\
+&= \frac{1}{Z_{\mathbf{x}}}\sum_{t=1}^{\tau} c_t\int_{\mathbf{w}}p_0(\mathbf{w})f(w_{k,j})\prod_{(k',j')\in\mathcal{T}_{tE}}w_{k',j'}~d\mathbf{w} 
+\end{align*}
+\begin{itemize}
+  \item   Naive computation: $\Omega(|\mathcal{S}|\cdot 2^{H(\mathcal{S})})$
+  \item   Recursive algorithm for trees: $O(|\mathcal{S}|)$, but $O(|\mathcal{S}|^2)$ for DAGs (Rashwan et al., 2016)
+\end{itemize}
+
+\textcolor{CMURed}{\textbf{Linear Time Reduction to Joint Inference:}}
+
+For each edge $(k,j)$, partition all the trees into two sets:
+\begin{itemize}
+  \item  $\mathcal{T}_T = \{\mathcal{T}_t: t\in[\tau], (k, j)\in \mathcal{T}_t\}$, trees containing the edge.
+  \item  $\mathcal{T}_F = \{\mathcal{T}_t: t\in[\tau], (k, j)\not\in \mathcal{T}_t\}$, trees not containing the edge.
+\end{itemize}
+
+$M_p(f(w_{k,j})) =$
+\begin{equation}
+\left(\frac{1}{Z_{\mathbf{x}}}\sum_{\mathcal{T}_t\in\mathcal{T}_F} c_t u_t\right) M_{p_{0,k}}(f(w_{k,j})) + \left(\frac{1}{Z_{\mathbf{x}}}\sum_{\mathcal{T}_t\in\mathcal{T}_T} c_t u_t\right)M_{p'_{0,k}}(f(w_{k,j}))
+\end{equation}
+
+\textcolor{CMURed}{\textbf{Efficient Polynomial Evaluation by Differentiation: }}
+
+\textcolor{CMURed}{\textbf{Key observation 1: }}$\sum_{t\in \mathcal{T}_T}^{\tau}c_tu_t + \sum_{t\in \mathcal{T}_F}^{\tau}c_tu_t$ can be computed in $O(|\mathcal{S}|)$ time and space in a bottom-up evaluation of $\mathcal{S}$, by re-defining the edge weights of the network.
+
+\textcolor{CMURed}{\textbf{Key observation 2: }}$\sum_{\mathcal{T}_t\in\mathcal{T}_T} c_t u_t = w_{k,j}\left(\partial\sum_{t=1}^{\tau}c_tu_t/\partial w_{k,j}\right)$, and it can be computed in $O(|\mathcal{S}|)$ time and space in a top-down differentiation of $\mathcal{S}$, by the multilinear nature of the network polynomial.
+
+\textcolor{CMURed}{\textbf{Example: }}
+\begin{align*}
+\quad g(x_1, x_2, x_3) &= 4x_1x_2 + 3x_2x_3 + 5x_1x_3\\
+\Rightarrow\quad  x_1\frac{\partial}{\partial x_1}g(x_1, x_2, x_3) &= 4{\color{blue}{x_1}}x_2 + \xcancel{3x_2x_3} + 5{\color{blue}{x_1}}x_3 
+\end{align*}
+\end{block}
+\end{column} 
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+\begin{column}{\onecolwid} % The third column
+\vspace*{-0.5in}
+\begin{block}{Dynamic Programming}
+For each edge $(k, j)$, moment can be computed in $O(|\mathcal{S}|)$ time and space. Naive computation leads to $O(|\mathcal{S}|^2)$ for all edges.
+
+\begin{columns}
+\begin{column}{0.4\linewidth}
+\includegraphics[width=\linewidth]{update.pdf}
+\end{column}
+~
+\begin{column}{0.6\linewidth}
+$$D_k(\mathbf{x};\mathbf{w}) = \frac{\partial V_{\text{root}}(\mathbf{x};\mathbf{w})}{\partial V_k(\mathbf{x};\mathbf{w})}$$
+\end{column}
+\end{columns}
+Sufficient statistics for each edge contains three terms:
+\begin{itemize} 
+  \item     Forward value $V_j$ at the child.
+  \item     Backward value $D_k$ at the parent.
+  \item     Edge weight $w_{k,j}$.
+\end{itemize}
+\textcolor{CMURed}{\textbf{Quadratic to Linear:}} For all edges $(k, j)$, moments can be computed in $O(|\mathcal{S}|)$ time, using only two more copies of the network. 
+\end{block}
+
+\begin{block}{Applications}
+Used as subroutines to develop linear time algorithms for Bayesian moment matching (BMM) and assumed density filters (ADF). 
+
+Runtime (log-seconds) over 20 real-world data sets.
+\begin{figure}
+\vspace*{-0.3in}
+\centering
+\includegraphics[width=\linewidth]{runtime.pdf}
+\end{figure}
+\end{block}
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
