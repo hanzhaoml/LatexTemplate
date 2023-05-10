@@ -9,87 +9,27 @@
 \usepackage{hyperref}
 \usepackage{changes}
 \usepackage{url}
-\usepackage{amssymb}
 \usepackage{enumitem}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
-\usepackage{color}
-\usepackage{subcaption}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{fancyvrb}
-\usepackage{comment}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 \usepackage{float}
 \usepackage{wrapfig}
-\usepackage{listings}
-\usepackage{natbib}
-\usepackage{mathtools}
-\usepackage{booktabs}
 \usepackage{siunitx}
 
-
-% Definitions of handy macros can go here
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[]
-\newtheorem{conjecture}{Conjecture}[]
-\newtheorem{example}{Example}[]
-\newtheorem{theorem}{Theorem}[]
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
-\newtheorem{claim}{Claim}[section]
-
-\floatname{algorithm}{Procedure}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-\newcommand{\abs}[1]{\lvert#1\rvert}
-\newcommand{\norm}[1]{\lVert#1\rVert}
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\CC}{\mathbb{C}}
-\newcommand{\SPD}{\mathbb{S}}
-\newcommand{\Nat}{\mathbb{N}}
-\newcommand{\br}[1]{\{#1\}}
-\newcommand\todo[1]{\textcolor{red}{[\textbf{TODO}: #1]}}
-\renewcommand{\lstlistingname}{Code}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator{\vect}{vec}
-\newcommand{\diag}{\text{diag}}
-\newcommand{\tr}{\text{tr}}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-\newcommand{\defeq}{\vcentcolon=}
-\newcommand{\eqdef}{=\vcentcolon}
-\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
-\renewcommand{\d}[1]{\ensuremath{\operatorname{d}\!{#1}}}
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-\lstset{frame=single,
-  language=matlab,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-  captionpos=b
-}
+% \usepackage{subcaption}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsthm}
+% \usepackage{natbib}
+% \usepackage{mathtools}
+% \usepackage{booktabs}
+% \usepackage{listings}
+% \usepackage{graphicx}
+% \usepackage{tabularx}
+% \usepackage{fancyvrb}
+% \usepackage{comment}
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
 
 % This line will be changed in the camera-ready version
 %\pgmheading{1}{2000}{1-48}{4/00}{10/00}{Authors}
@@ -106,7 +46,7 @@
 \maketitle
 
 \begin{abstract}%
-Abstract goes here.
+Abstract goes here
 \end{abstract}
 
 % \begin{keywords}
@@ -114,7 +54,9 @@ Abstract goes here.
 % \end{keywords}
 
 \section{Introduction}
-  
+\begin{equation*}
+    \Var(X) = \E[(X - \E[X])^2]
+\end{equation*}
 
 %\appendix
 \acks{Acknowledgment goes here.}
